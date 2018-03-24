@@ -1,8 +1,6 @@
-require('dotenv').config({path: 'configs/.env'});
-
-var config = require('./knexfile.js');  
-var env = process.env.NODE_ENV;  
-var knex = require('knex')(config[env]);
+const config = require('./knexfile.js');  
+const env = process.env.NODE_ENV;  
+const knex = require('knex')(config[env]);
 
 knex.raw('select 1+1 as result')
 	.then(() => console.log('valid connection'))
