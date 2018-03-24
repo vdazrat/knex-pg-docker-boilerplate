@@ -6,7 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "NODE_ENV='development' nodemon server/index.js --ignore node_modules/",
-    "start": "NODE_ENV='production' nodemon server/index.js --ignore node_modules/"
+    "start": "NODE_ENV='production' nodemon server/index.js --ignore node_modules/",
+    "knex-init": "NODE_PATH=./server/db && cd $NODE_PATH && knex init",
+    "migrate:make": "NODE_PATH=./server/db && knex migrate:make",
+    "migrate:latest": "NODE_PATH=./server/db && knex migrate:latest",
+    "migrate:rollback": "NODE_PATH=./server/db && knex migrate:rollback",
+    "seed:make": "NODE_PATH=./server/db && knex seed:make",
+    "seed:run": "NODE_PATH=./server/db && knex seed:run"
   },
   "author": "",
   "license": "ISC",
