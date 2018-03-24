@@ -1,6 +1,14 @@
 # knex-pg-docker-boilerplate
-Boilerplate to get started with knex and pg using docker compose
 
-Run `docker-compose-up -d` from root.  
-This will setup adminer running on port, 8081. 
-Initial databses are setup from the db/setup-db.sh script.
+Set up for knex. The following things are needed.  
+1. knexfile  
+  - Configuration file for knex. Uses .env for setup.
+2. connector  
+  - exports a configured knex object.
+3. scripts to run the knex api.
+  - found in server/db/scripts
+
+To run, first run `npm run knex-init` followed by `npm run migrate:make my-migration`. 
+Then write your migration in the new file created in ./migrations.  
+Once done, run `npm run migrate:latest` to migrate.  
+run `npm run migrate:rollback` to rollback the latest migration.
