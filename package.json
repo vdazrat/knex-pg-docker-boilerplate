@@ -10,11 +10,12 @@
     "knex-init": "NODE_PATH=./server/db && cd $NODE_PATH && knex init",
     "migrate:make": "NODE_PATH=./server/db && cd $NODE_PATH && knex migrate:make",
     "migrate:latest": "MODE='latest' node ./server/db/scripts/migrate.js",
-    "migrate:rollback": "MODE='rollback' node ./server/db/scripts/migrate.js",
+    "migrate:rollback": "MODE='rollback' node ./server/db/scripts/migrate.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bookshelf": "^0.13.3",
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
     "knex": "^0.14.4",
