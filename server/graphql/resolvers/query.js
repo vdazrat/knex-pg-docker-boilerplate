@@ -60,7 +60,7 @@ const resolver = {
 				.then(res => {
 					return res.models.map(comment => ({
 						id: comment.get('id'),
-						content: comment.get('content'),
+						body: comment.get('body'),
 						user: curryParams(resolver.RootQuery.user, root, { uid: comment.get('author_id') }),
 					}));
 				});

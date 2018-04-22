@@ -3,7 +3,7 @@ const type = `
 		id: String,
 		user: User,
 		post: Post,
-		content: String
+		body: String
 	}
 `;
 

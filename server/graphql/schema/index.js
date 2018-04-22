@@ -6,6 +6,7 @@ const Post = require('./post');
 const Schema = `
 	schema {
 		query: RootQuery
+		mutation: Mutation
 	}
 `;
 const RootQuery = `
@@ -17,4 +18,11 @@ const RootQuery = `
 	}
 `;
 
-module.exports = [Schema, RootQuery, User, Comment, Post];
+const MutationType = `
+	type Mutation {
+		addPost(author_id: ID!, title: String!, content: String!): Post
+		addComment(author_id: ID!, post_id: ID!, body: String!): Comment
+	}
+`;
+
+module.exports = [Schema, RootQuery, MutationType, User, Comment, Post];

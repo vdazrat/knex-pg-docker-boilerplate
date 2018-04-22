@@ -8,12 +8,13 @@ const { graphqlExpress, graphiqlExpress } = require('apollo-server-express');
 const { makeExecutableSchema } = require('graphql-tools');
 const getContext = require('./graphql/context');
 const queryResolvers = require('./graphql/resolvers/query');
+const mutationResolvers = require('./graphql/resolvers/mutations');
 const querySchema = require('./graphql/schema');
 
 const User = require('./db/models/User');
 
 const context = getContext();
-const schema = makeExecutableSchema({ typeDefs: querySchema, resolvers: queryResolvers });
+const schema = makeExecutableSchema({ typeDefs: querySchema, resolvers: { ...queryResolvers, ...mutationResolvers } });
 const app = express();
 const port = 4000;
 
