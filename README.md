@@ -2,10 +2,10 @@
 
 # graphql
 install the dependencies for
- `apollo-server-express` - to handle the /graph(i)ql routes
- `body-parser` - middleware to get the body in the request object
- `graphql` - graphQL.js, used for building type schema and execution. 
- `graphql-tools` - exports makeExecutableSchema, to stitch the schema and resolvers.
+ `apollo-server-express` - to handle the /graph(i)ql routes . 
+ `body-parser` - middleware to get the body in the request object . 
+ `graphql` - graphQL.js, used for building type schema and execution.  
+ `graphql-tools` - exports makeExecutableSchema, to stitch the schema and resolvers.  
 
 ## 1. Queries
 
@@ -64,3 +64,4 @@ query{
   }
 }
 ```
+Mutaions are handled [next](https://github.com/vdazrat/knex-pg-docker-boilerplate/tree/mutations)
