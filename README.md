@@ -12,3 +12,5 @@ To run, first run `npm run knex-init` followed by `npm run migrate:make my-migra
 Then write your migration in the new file created in ./migrations.  
 Once done, run `npm run migrate:latest` to migrate.  
 run `npm run migrate:rollback` to rollback the latest migration.
+
+setup bookshelf [next](https://github.com/vdazrat/knex-pg-docker-boilerplate/blob/bookshelf-setup/README.md)
